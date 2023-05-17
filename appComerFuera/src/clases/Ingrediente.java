@@ -1,5 +1,7 @@
 package clases;
 
-public class Ingrediente extends CosaConNombre{
+import enumeration.Alergeno;
 
+public class Ingrediente extends CosaConNombre{
+private Alergeno alergeno;
 }

@@ -6,4 +6,5 @@
  *
  */
 module appComerFuera {
+	requires java.sql;
 }
