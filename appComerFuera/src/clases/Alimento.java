@@ -5,29 +5,31 @@ import java.util.HashSet;
 
 import enumeration.Alergeno;
 
-public class Alimento extends CosaConNombre{
+public class Alimento extends CosaConNombre {
 	private byte precio;
 	private HashSet<Ingrediente> Ingredientes;
-	
+
 	public Alimento(byte precio, HashSet<Ingrediente> ingredientes) {
 		super();
 		this.precio = precio;
 		Ingredientes = ingredientes;
 	}
-	
-	
-	//1 - Crea una tabla alimentoIngrediente con la pk de alimento y la pk de ingrediente
-	//Esta tabla está porque la relacion entre alimento e ingrediente es muchos a muchos
-	public static ArrayList<Alimento> getTodos(){
-		//Traer usando DAO todos los alimentos de la base de datos y devolverlos en arraylist
+
+	// 1 - Crea una tabla alimentoIngrediente con la pk de alimento y la pk de
+	// ingrediente
+	// Esta tabla está porque la relacion entre alimento e ingrediente es muchos a
+	// muchos
+	public static ArrayList<Alimento> getTodos() {
+		// Traer usando DAO todos los alimentos de la base de datos y devolverlos en
+		// arraylist
 	}
-	
-	
-	public static ArrayList<Alimento> getTodos(ArrayList<Alergeno> alergernosExcluidos){
-		ArrayList<Alimento> todos=getTodos();
-		//Elimina del arraylist los que contengan los alérgenos que te vengen en alergenosIncluidos
+
+	public static ArrayList<Alimento> getTodos(ArrayList<Alergeno> alergernosExcluidos) {
+		ArrayList<Alimento> todos = getTodos();
+		// Elimina del arraylist los que contengan los alérgenos que te vengen en
+		// alergenosIncluidos
 	}
-	
+
 	public byte getPrecio() {
 		return precio;
 	}
@@ -43,7 +45,5 @@ public class Alimento extends CosaConNombre{
 	public void setIngredientes(HashSet<Ingrediente> ingredientes) {
 		Ingredientes = ingredientes;
 	}
-	
-	
-	
+
 }
