@@ -6,8 +6,8 @@ public class Bebida extends Alimento {
 	// ¿aquí no debería conectarse el enumeration?
 	private byte tamaño;
 
-	public Bebida(byte precio, HashSet<Ingrediente> ingredientes, byte tamaño) {
-		super(precio, ingredientes);
+	public Bebida(String nombre, byte precio, HashSet<Ingrediente> ingredientes, byte tamaño) {
+		super(nombre, precio, ingredientes);
 		this.tamaño = tamaño;
 	}
 

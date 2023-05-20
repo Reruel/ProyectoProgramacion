@@ -5,8 +5,8 @@ import enumeration.Alergeno;
 public class Ingrediente extends CosaConNombre {
 	private Alergeno alergeno;
 
-	public Ingrediente(Alergeno alergeno) {
-		super();
+	public Ingrediente(String nombre, Alergeno alergeno) {
+		super(nombre);
 		this.alergeno = alergeno;
 	}
 

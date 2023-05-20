@@ -8,8 +8,8 @@ public class Usuario extends CosaConNombre {
 	private String contraseña;
 	private ArrayList<Alergeno> alergeno;
 
-	public Usuario(String contraseña, ArrayList<Alergeno> alergeno) {
-		super();
+	public Usuario(String nombre, String contraseña, ArrayList<Alergeno> alergeno) {
+		super(nombre);
 		this.contraseña = contraseña;
 		this.alergeno = alergeno;
 	}

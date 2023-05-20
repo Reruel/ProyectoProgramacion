@@ -8,12 +8,14 @@ import enumeration.Alergeno;
 public class Alimento extends CosaConNombre {
 	private byte precio;
 	private HashSet<Ingrediente> Ingredientes;
+	
 
-	public Alimento(byte precio, HashSet<Ingrediente> ingredientes) {
-		super();
+	public Alimento(String nombre, byte precio, HashSet<Ingrediente> ingredientes) {
+		super(nombre);
 		this.precio = precio;
 		Ingredientes = ingredientes;
 	}
+
 
 	// 1 - Crea una tabla alimentoIngrediente con la pk de alimento y la pk de
 	// ingrediente
@@ -26,7 +28,7 @@ public class Alimento extends CosaConNombre {
 
 	public static ArrayList<Alimento> getTodos(ArrayList<Alergeno> alergernosExcluidos) {
 		ArrayList<Alimento> todos = getTodos();
-		// Elimina del arraylist los que contengan los alérgenos que te vengen en
+		// Elimina del arraylist los que contengan los alérgenos que te vengan en
 		// alergenosIncluidos
 	}
 
