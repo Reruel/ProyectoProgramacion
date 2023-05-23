@@ -9,7 +9,7 @@ public class Restaurante extends CosaConNombre {
 	private ArrayList<Alimento> alergenoExcluido;
 	private String ciudad;
 	private HashMap<String, Alimento> carta;
-
+	
 	public Restaurante(String nombre, String ciudad, ArrayList<Alimento> alergenoExcluido) {
 		super(nombre);
 		this.ciudad = ciudad;
