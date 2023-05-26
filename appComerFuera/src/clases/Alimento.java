@@ -9,6 +9,9 @@ public class Alimento extends CosaConNombre {
 	private byte precio;
 	private HashSet<Ingrediente> Ingredientes;
 	
+	public Alimento(String nombre) {
+		super(nombre);
+	}
 
 	public Alimento(String nombre, byte precio, HashSet<Ingrediente> ingredientes) {
 		super(nombre);
@@ -20,7 +23,7 @@ public class Alimento extends CosaConNombre {
 	// 1 - Crea una tabla alimentoIngrediente con la pk de alimento y la pk de
 	// ingrediente
 	// Esta tabla está porque la relacion entre alimento e ingrediente es muchos a
-	// muchos
+	// muchos (HECHO)
 	public static ArrayList<Alimento> getTodos() {
 		// Traer usando DAO todos los alimentos de la base de datos y devolverlos en
 		// arraylist

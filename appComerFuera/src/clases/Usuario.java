@@ -5,13 +5,12 @@ import enumeration.Alergeno;
 import java.util.ArrayList;
 
 public class Usuario extends CosaConNombre {
-	private String email;
+	
 	private String contraseña;
 	private ArrayList<Alergeno> alergeno;
 
-	public Usuario(String email, String nombre, String contraseña, ArrayList<Alergeno> alergeno) {
+	public Usuario(String nombre, String contraseña, ArrayList<Alergeno> alergeno) {
 		super(nombre);
-		this.email = email;
 		this.contraseña = contraseña;
 		this.alergeno = alergeno;
 	}

@@ -18,7 +18,7 @@ public abstract class DAO {
 
 	private static Statement conectar() {
 		try {
-			conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bicicletasdaw", "root", "admin");
+			conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ProyectoProgramacion", "root", "admin");
 			return conexion.createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
