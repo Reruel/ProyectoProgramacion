@@ -171,7 +171,7 @@ CREATE TABLE ingredientesAlimentos (
 );
 
 insert into ingredientesAlimentos (alimento_nombre, ingrediente_nombre)
-values ('Huevos rotos con picadillo', 'Huevo'),
+values 
        ('Huevos rotos con picadillo', 'Patata'),
        ('Huevos rotos con picadillo', 'Cebolla'),
        ('Huevos rotos con picadillo', 'Aceite de oliva'),
@@ -268,10 +268,10 @@ values ('Huevos rotos con picadillo', 'Huevo'),
        ('Sundae de fresa', 'Leche'),
        ('McFlurry de oreo y chocolate', 'Leche'), 
        ('Sundae de chocolate blanco', 'Leche'),
-       ('Actimel banana minions', 'Leche'), -- ta bien
+       ('Actimel banana minions', 'Leche'),
        ('Panacotta', 'Azucar'),
        ('Panacotta', 'Queso'),
-       ('Helado tres sabores', 'Leche'), -- ta mal
+       ('Helado tres sabores', 'Leche'),
        ('Flan de turron', 'Huevo'),
        ('Flan de turron', 'Leche'),
        ('Flan de turron', 'Azucar');
@@ -381,13 +381,11 @@ values
 ('Japonés Asakusa', 'Sorbete de limon'),
 ('Japonés Asakusa', 'Platano frito'),
 ('Japonés Asakusa', 'Daifuku'),
-('Japonés Asakusa', 'Chocolate de te verde'),
-('Japonés Asakusa', 'Te matcha'),
 
 ('McDonalds', 'McCrispy'),
 ('McDonalds', 'Bolitas de pollo'),
-('McDonalds', 'Patatas deluxe'),
-('McDonalds', 'Menú4You'),
+('McDonalds', 'Patatas Deluxe'),
+('McDonalds', 'Menu4You'),
 ('McDonalds', 'McXtreme'),
 ('McDonalds', 'Coca cola'),
 ('McDonalds', 'Coca zero'),
@@ -402,13 +400,13 @@ values
 ('McDonalds', 'Cafe solo'),
 ('McDonalds', 'Cafe con leche'),
 ('McDonalds', 'Manzanilla'),
-('McDonalds', 'Té'),
+('McDonalds', 'Te'),
 ('McDonalds', 'Carajillo'),
 ('McDonalds', 'McFlurry de kitkat y caramelo'),
 ('McDonalds', 'Sundae de fresa'),
 ('McDonalds', 'McFlurry de oreo y chocolate'),
 ('McDonalds', 'Sundae de chocolate blanco'),
-('McDonalds', 'Actimel de banana minions'),
+('McDonalds', 'Actimel banana minions'),
 
 ('Asador La Marca', 'Contramuslo a la parrilla'),
 ('Asador La Marca', 'Empanada argentina'),
