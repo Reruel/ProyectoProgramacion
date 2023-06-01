@@ -18,4 +18,18 @@ public class Ventana extends JFrame{
 		this.setIconImage(new ImageIcon("./cubiertos.png").getImage());
 		this.setVisible(true);
 	}
+	public void cambiarAPantalla(Class<?> clase) {
+		this.getContentPane().setVisible(false);
+		if (clase.equals(PantallaLogin.class)) {
+			this.setContentPane(new PantallaLogin(this));
+		} 
+		if(clase.equals(PantallaRegistro.class)) {
+			this.setContentPane(new PantallaRegistro(this));
+		}
+		if(clase.equals(PantallaLogueado.class)) {
+			this.setContentPane(new PantallaLogueado(this));
+		}
+		
+		this.getContentPane().setVisible(true);
+	}
 }

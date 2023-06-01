@@ -79,7 +79,7 @@ public class PantallaLogin extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				String nombre=huecoNombre.getText();
 				String contraseña=huecoContraseña.getText();
-				try {
+				/*try {
 					ventana.usuarioLogado=new Usuario(nombre,contraseña);
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -95,7 +95,8 @@ public class PantallaLogin extends JPanel {
 					JOptionPane.showMessageDialog(ventana, "La contraseña no es correcta", "Login fallido",
 							JOptionPane.ERROR_MESSAGE);
 					e1.printStackTrace();
-				}
+				}*/
+				ventana.cambiarAPantalla(PantallaLogueado.class);
 			}
 		});
 		botonLogin.setBackground(new Color(216, 187, 52));
@@ -106,6 +107,12 @@ public class PantallaLogin extends JPanel {
 		add(botonLogin, gbc_botonLogin);
 		
 		JButton botonRegister = new JButton("REGISTER");
+		botonRegister.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.cambiarAPantalla(PantallaRegistro.class);
+			}
+		});
 		botonRegister.setForeground(new Color(0, 0, 0));
 		botonRegister.setBackground(new Color(236, 88, 0));
 		GridBagConstraints gbc_botonRegister = new GridBagConstraints();
