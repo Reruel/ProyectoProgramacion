@@ -1,10 +1,12 @@
 package Principal;
 
+import interfaces.Ventana;
+
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		//Restaurante
+		Ventana v=new Ventana();
 	}
 
 }

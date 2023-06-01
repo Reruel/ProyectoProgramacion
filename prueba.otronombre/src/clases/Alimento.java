@@ -7,13 +7,13 @@ import enumeration.Alergeno;
 
 public class Alimento extends CosaConNombre {
 	private byte precio;
-	private HashSet<Ingrediente> Ingredientes;
+	private ArrayList<Ingrediente> Ingredientes;
 	
 	public Alimento(String nombre) {
 		super(nombre);
 	}
 
-	public Alimento(String nombre, byte precio, HashSet<Ingrediente> ingredientes) {
+	public Alimento(String nombre, byte precio, ArrayList<Ingrediente> ingredientes) {
 		super(nombre);
 		this.precio = precio;
 		Ingredientes = ingredientes;
@@ -24,7 +24,7 @@ public class Alimento extends CosaConNombre {
 	// ingrediente
 	// Esta tabla está porque la relacion entre alimento e ingrediente es muchos a
 	// muchos (HECHO)
-	public static ArrayList<Alimento> getTodos() {
+/*	public static ArrayList<Alimento> getTodos() {
 		// Traer usando DAO todos los alimentos de la base de datos y devolverlos en
 		// arraylist
 	}
@@ -33,7 +33,7 @@ public class Alimento extends CosaConNombre {
 		ArrayList<Alimento> todos = getTodos();
 		// Elimina del arraylist los que contengan los alérgenos que te vengan en
 		// alergenosIncluidos
-	}
+	}*/
 
 	public byte getPrecio() {
 		return precio;
@@ -43,11 +43,11 @@ public class Alimento extends CosaConNombre {
 		this.precio = precio;
 	}
 
-	public HashSet<Ingrediente> getIngredientes() {
+	public ArrayList<Ingrediente> getIngredientes() {
 		return Ingredientes;
 	}
 
-	public void setIngredientes(HashSet<Ingrediente> ingredientes) {
+	public void setIngredientes(ArrayList<Ingrediente> ingredientes) {
 		Ingredientes = ingredientes;
 	}
 
