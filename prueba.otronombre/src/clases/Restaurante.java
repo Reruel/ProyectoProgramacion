@@ -92,10 +92,12 @@ public class Restaurante extends CosaConNombre {
 			ArrayList<Object> consulta = DAO.consultar("platoRestaurante", columnas, restricciones);
 			ArrayList<Alimento> alimentos = new ArrayList<Alimento>();
 			for(byte i=0;i<consulta.size();i++) {
-				//Alimento al = new Alimento((String)consulta.get(i));
+				/*System.out.println((String)consulta.get(i));
+				Alimento al = new Alimento((String)consulta.get(i));
 				//Crea constructor vacio que no interaccione con bd, y establece los datos leidos desde bd con los setters
 				alimentos.add(al);
 				//faltan incluir el resto de valores de las variables internas
+				*/
 			}
 			//Usamos este boolean para salir del doble bucle en caso de eliminar un alimento de la lista
 			boolean excluir = false;

@@ -9,9 +9,12 @@ public class Alimento extends CosaConNombre {
 	private byte precio;
 	private ArrayList<Ingrediente> Ingredientes;
 	
-	public Alimento(String nombre) {
-		super(nombre);
-	}
+	/*public Alimento(String consulta) {
+		//super(nombre);
+		
+		
+		
+	}*/
 
 	public Alimento(String nombre, byte precio, ArrayList<Ingrediente> ingredientes) {
 		super(nombre);
