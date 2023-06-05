@@ -101,6 +101,11 @@ public class PantallaLogin extends JPanel {
 						JOptionPane.showMessageDialog(ventana, "La contraseña no es correcta", "Login fallido",
 								JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+						JOptionPane.showMessageDialog(ventana, "Algo malo ha pasado.", "Buena suerte",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				}
 				

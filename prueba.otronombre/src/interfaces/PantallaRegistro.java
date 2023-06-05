@@ -5,6 +5,8 @@ import javax.swing.JRadioButton;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JTextField;
@@ -125,9 +127,18 @@ public class PantallaRegistro extends JPanel{
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+					JOptionPane.showMessageDialog(ventana, "Algo malo con SQL ha pasado.", "Buena suerte",
+							JOptionPane.ERROR_MESSAGE);
 				} catch (UsuarioYaExisteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+					JOptionPane.showMessageDialog(ventana, "El usuario " + nombre + " ya existe.", "Registro fallido",
+							JOptionPane.ERROR_MESSAGE);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					JOptionPane.showMessageDialog(ventana, "Algo malo ha pasado.", "Buena suerte",
+							JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
