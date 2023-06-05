@@ -17,6 +17,12 @@ public class Usuario extends CosaConNombre {
 	
 	private String contraseña;
 	private ArrayList<Alergeno> alergeno;
+	
+	public Usuario(String nombre) {
+		super(nombre);
+		contraseña = "";
+		alergeno = new ArrayList<Alergeno>();
+	}
 
 	public Usuario(String nombre, String contraseña, ArrayList<Alergeno> alergeno) throws SQLException, UsuarioYaExisteException {
 		super(nombre);

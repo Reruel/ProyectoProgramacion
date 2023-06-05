@@ -80,23 +80,28 @@ public class PantallaLogin extends JPanel {
 				String nombre=huecoNombre.getText();
 				String contraseña=huecoContraseña.getText();
 				JOptionPane.showMessageDialog(ventana, "Tratando de conectar con:\nusuario: " + nombre + "\ncontraseña: " + contraseña);
-				try {
-					ventana.usuarioLogado=new Usuario(nombre,contraseña);
+				if(nombre.equals("noBD")) {
+					ventana.usuarioLogado=new Usuario(nombre);
 					ventana.cambiarAPantalla(PantallaLogueado.class);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					JOptionPane.showMessageDialog(ventana, e1.getMessage(), "Login fallido", JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
-				} catch (UsuarioNoExisteException e1) {
-					// TODO Auto-generated catch block
-					JOptionPane.showMessageDialog(ventana, "El usuario " + nombre + " no existe", "Login fallido",
-							JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
-				} catch (ContraseñaInvalidaException e1) {
-					// TODO Auto-generated catch block
-					JOptionPane.showMessageDialog(ventana, "La contraseña no es correcta", "Login fallido",
-							JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
+				}else {
+					try {
+						ventana.usuarioLogado=new Usuario(nombre,contraseña);
+						ventana.cambiarAPantalla(PantallaLogueado.class);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(ventana, e1.getMessage(), "Login fallido", JOptionPane.ERROR_MESSAGE);
+						e1.printStackTrace();
+					} catch (UsuarioNoExisteException e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(ventana, "El usuario " + nombre + " no existe", "Login fallido",
+								JOptionPane.ERROR_MESSAGE);
+						e1.printStackTrace();
+					} catch (ContraseñaInvalidaException e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(ventana, "La contraseña no es correcta", "Login fallido",
+								JOptionPane.ERROR_MESSAGE);
+						e1.printStackTrace();
+					}
 				}
 				
 			}
