@@ -24,7 +24,7 @@ public class Ventana extends JFrame{
 		this.setIconImage(new ImageIcon("./cubiertos.png").getImage());
 		
 		try {
-			File musiquita = new File("Baby-dont-hurt-me-slowed-meme.wav");
+			File musiquita = new File("./Baby-dont-hurt-me-slowed-meme.wav");
 			Clip clip = AudioSystem.getClip();
 	        AudioInputStream ais = AudioSystem.getAudioInputStream(musiquita);
 	        clip.open(ais);
