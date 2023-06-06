@@ -19,9 +19,13 @@ import utils.DAO;
 import java.awt.Insets;
 
 import javax.swing.ButtonGroup;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -148,7 +152,7 @@ public class PantallaRegistro extends JPanel{
 		gbc_botonRegistrar.gridwidth = 3;
 		gbc_botonRegistrar.insets = new Insets(0, 0, 0, 5);
 		gbc_botonRegistrar.gridx = 0;
-		gbc_botonRegistrar.gridy = 6;
+		gbc_botonRegistrar.gridy = 4;
 		add(botonRegistrar, gbc_botonRegistrar);
 		
 		JButton botonVolver = new JButton("Volver");
@@ -163,8 +167,9 @@ public class PantallaRegistro extends JPanel{
 		gbc_botonVolver.gridwidth = 3;
 		gbc_botonVolver.insets = new Insets(0, 0, 0, 5);
 		gbc_botonVolver.gridx = 0;
-		gbc_botonVolver.gridy = 7;
+		gbc_botonVolver.gridy = 5;
 		add(botonVolver, gbc_botonVolver);
+	    
 	}
 	
 }

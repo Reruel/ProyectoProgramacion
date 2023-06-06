@@ -14,10 +14,14 @@ import clases.Usuario;
 import excepciones.ContraseñaInvalidaException;
 import excepciones.UsuarioNoExisteException;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.SQLException;
 
 public class PantallaLogin extends JPanel {
@@ -132,6 +136,23 @@ public class PantallaLogin extends JPanel {
 		gbc_botonRegister.gridx = 2;
 		gbc_botonRegister.gridy = 3;
 		add(botonRegister, gbc_botonRegister);
+		
+		try {
+			URL url = new URL("https://media.tenor.com/GUhnxCpzr78AAAAd/mike-ohearn-baby-dont-hurt-me.gif");
+			Icon icon = new ImageIcon(url);
+		    JLabel mike = new JLabel(icon);
+		    GridBagConstraints gbc_mike = new GridBagConstraints();
+		    gbc_mike.fill = GridBagConstraints.HORIZONTAL;
+			gbc_mike.gridwidth = 2;
+			gbc_mike.insets = new Insets(0, 0, 0, 5);
+			gbc_mike.gridx = 1;
+			gbc_mike.gridy = 4;
+			add(mike, gbc_mike);
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(ventana, e1.getMessage(), "Mike error", JOptionPane.ERROR_MESSAGE);
+			e1.printStackTrace();
+		}
 	}
 
 }
