@@ -52,7 +52,7 @@ public class Usuario extends CosaConNombre {
 	    cols.add("nombre");
 	    cols.add("contraseña");
 	    restricciones.put("nombre", nombre);
-	    ArrayList<Object> resultado = DAO.consultar("usuario_alergenos",cols,restricciones);
+	    ArrayList<Object> resultado = DAO.consultar("usuario",cols,restricciones);
 	    String contraseniaString = "";
 	    if(resultado.isEmpty()) {
 	    	this.setNombre(null);
@@ -69,8 +69,8 @@ public class Usuario extends CosaConNombre {
             } else {
             	LinkedHashSet<String> cols2 = new LinkedHashSet<String>();
             	HashMap<String, Object>restricciones2 = new HashMap<String,Object>();
-            	restricciones2.put("nombre",nombre);
-            	cols2.add("contraseña");
+            	cols2.add("nombreUsuario");
+            	restricciones2.put("nombreUsuario",nombre);
             	ArrayList<Object>resultado2=DAO.consultar("usuario_alergenos", cols2, restricciones2);
             	ArrayList<Alergeno>alergenoss = new ArrayList<Alergeno>();
             	for(byte i=0;i<resultado2.size();i++) {
