@@ -46,6 +46,55 @@ public class PantallaLogueado extends JPanel{
 			Restaurante japones = new Restaurante("Japonés Asakusa");
 			Restaurante mcDonalds = new Restaurante("McDonalds");
 			Restaurante asador = new Restaurante("Asador La Marca");
+			
+			Object data[][]={ {italiano.getNombre(), italiano.getCiudad(), "Ver Detalles"},    
+					{miguel.getNombre(), miguel.getCiudad(), "Ver Detalles"},    
+					{japones.getNombre(), japones.getCiudad(), "Ver Detalles"},
+					{mcDonalds.getNombre(), mcDonalds.getCiudad(), "Ver Detalles"},
+					{asador.getNombre(), asador.getCiudad(), "Ver Detalles"}};
+			
+			String column[]={"Restaurante", "Ciudad", "Más detalles"};    
+			
+			DefaultTableModel model = new DefaultTableModel(data, column);
+		    final JTable jt = new JTable(model); 
+			jt.setRowHeight(50);
+			jt.setCellSelectionEnabled(true);  
+			ListSelectionModel select= jt.getSelectionModel();  
+			select.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  
+			select.addListSelectionListener(new ListSelectionListener() {  
+				public void valueChanged(ListSelectionEvent e) {  
+					String Data = null;  
+					int row = jt.getSelectedRow();  
+					int columns = jt.getSelectedColumn();  
+					Data = (String) jt.getValueAt(row, columns); 
+					if(Data == "Ver Detalles") {
+						System.out.println("Seleccion");
+						String restaurante = (String) jt.getValueAt(row, 0);
+						JFrame f = new JFrame(restaurante);
+						
+				        JLabel LabelRestaurante = new JLabel(restaurante);
+				        LabelRestaurante.setBounds(50,50, 100,30); 
+				        f.add(LabelRestaurante);  
+		                
+				        JLabel LabelCiudad = new JLabel((String) jt.getValueAt(row, 1));
+				        LabelCiudad.setBounds(50,100, 100,30); 
+				        f.add(LabelCiudad);
+				        
+				        f.setSize(300,300);    
+		                f.setLayout(null);    
+		                f.setVisible(true);     
+					}  
+					System.out.println("Table element selected is: " + Data);
+					
+			        
+				}       
+			});  
+			JScrollPane sp=new JScrollPane(jt);  
+			GridBagConstraints gbc_sp = new GridBagConstraints();
+			gbc_sp.gridx = 0;
+			gbc_sp.gridy = 1;
+			gbc_sp.gridwidth = 3;
+			add(sp, gbc_sp);
 		}catch(RestauranteNoExisteException e1) {
 			e1.printStackTrace();
 			JOptionPane.showMessageDialog(ventana, "El restaurante no existe.", "Restaurante fallido",
@@ -56,60 +105,5 @@ public class PantallaLogueado extends JPanel{
 			JOptionPane.showMessageDialog(ventana, "Algo malo ha pasado.", "Buena suerte",
 					JOptionPane.ERROR_MESSAGE);
 		}
-		
-		Object data[][]={ {"La derecha", "Málaga", "Ver Detalles"},    
-                {"Pollo Asado", "Málaga", "Ver Detalles"},    
-                {"Er charly", "Coín", "Ver Detalles"},
-                {"La salchichita", "Alhaurín de la Torre", "Ver Detalles"},
-                {"Baltasar", "Málaga", "Ver Detalles"},
-                {"Chiringuito", "Torremolinos", "Ver Detalles"},
-                {"Sin nombre", "Torremolinos", "Ver Detalles"},
-                {"Cazuelita", "Málaga", "Ver Detalles"},
-                {"Camparones", "Coín", "Ver Detalles"},
-                {"Tagliattela", "Málaga", "Ver Detalles"}};
-		
-		String column[]={"Restaurante", "Ciudad", "Más detalles"};    
-		
-		DefaultTableModel model = new DefaultTableModel(data, column);
-	    final JTable jt = new JTable(model); 
-		jt.setRowHeight(50);
-		jt.setCellSelectionEnabled(true);  
-		ListSelectionModel select= jt.getSelectionModel();  
-		select.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  
-		select.addListSelectionListener(new ListSelectionListener() {  
-			public void valueChanged(ListSelectionEvent e) {  
-				String Data = null;  
-				int row = jt.getSelectedRow();  
-				int columns = jt.getSelectedColumn();  
-				Data = (String) jt.getValueAt(row, columns); 
-				if(Data == "Ver Detalles") {
-					System.out.println("Seleccion");
-					String restaurante = (String) jt.getValueAt(row, 0);
-					JFrame f = new JFrame(restaurante);
-					
-			        JLabel LabelRestaurante = new JLabel(restaurante);
-			        LabelRestaurante.setBounds(50,50, 100,30); 
-			        f.add(LabelRestaurante);  
-	                
-			        JLabel LabelCiudad = new JLabel((String) jt.getValueAt(row, 1));
-			        LabelCiudad.setBounds(50,100, 100,30); 
-			        f.add(LabelCiudad);
-			        
-			        f.setSize(300,300);    
-	                f.setLayout(null);    
-	                f.setVisible(true);     
-				}  
-				System.out.println("Table element selected is: " + Data);
-				
-		        
-			}       
-		});  
-		JScrollPane sp=new JScrollPane(jt);  
-		GridBagConstraints gbc_sp = new GridBagConstraints();
-		gbc_sp.gridx = 0;
-		gbc_sp.gridy = 1;
-		gbc_sp.gridwidth = 3;
-		add(sp, gbc_sp);
 	}
-	
 }
