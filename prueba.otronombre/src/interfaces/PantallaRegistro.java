@@ -36,10 +36,10 @@ public class PantallaRegistro extends JPanel{
 	public PantallaRegistro(Ventana v) {
 		this.ventana=v;
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		JLabel labelNombre = new JLabel("Nombre");
@@ -150,6 +150,21 @@ public class PantallaRegistro extends JPanel{
 		gbc_botonRegistrar.gridx = 0;
 		gbc_botonRegistrar.gridy = 6;
 		add(botonRegistrar, gbc_botonRegistrar);
+		
+		JButton botonVolver = new JButton("Volver");
+		botonVolver.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.cambiarAPantalla(PantallaLogin.class);
+			}
+		});
+		GridBagConstraints gbc_botonVolver = new GridBagConstraints();
+		gbc_botonVolver.fill = GridBagConstraints.HORIZONTAL;
+		gbc_botonVolver.gridwidth = 3;
+		gbc_botonVolver.insets = new Insets(0, 0, 0, 5);
+		gbc_botonVolver.gridx = 0;
+		gbc_botonVolver.gridy = 7;
+		add(botonVolver, gbc_botonVolver);
 	}
 	
 }
