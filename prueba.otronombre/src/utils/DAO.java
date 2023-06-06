@@ -1,6 +1,10 @@
 package utils;
 
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,9 +22,25 @@ public abstract class DAO {
 
 	private static Statement conectar() {
 		try {
-			conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ProyectoProgramacion", "root", "Pasarnowar69"); 
+			BufferedReader lector=new BufferedReader(new FileReader("bdconfig.ini"));
+			String ip=lector.readLine();
+			int puerto=Integer.parseInt(lector.readLine());
+			String nombreBD=lector.readLine();
+			String user=lector.readLine();
+			String password=lector.readLine();
+			lector.close();
+			conexion = DriverManager.getConnection("jdbc:mysql://"+ip+":"+puerto+
+					"/"+nombreBD, user, password);
 			return conexion.createStatement();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
